@@ -25,7 +25,7 @@ const db = mysql.createPool({
     host: 'localhost',
     user: 'root',
     port: '3306',
-    database: 'beacontreedb'
+    database: 'resumeupload'
 });
 
 app.use(

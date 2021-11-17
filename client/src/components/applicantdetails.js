@@ -7,6 +7,8 @@ import AuthApi from "./AuthApi";
 import { NavDropdown } from 'react-bootstrap';
 import Cookies from 'js-cookie';
 import Tablee from './table'
+import { MDBInput, MDBCol } from "mdbreact";
+
 
 //this
 function ApplicantDetails() {
@@ -76,7 +78,8 @@ useEffect(() => {
     || name.skill1.toLowerCase().includes(search.toLocaleLowerCase())
     || name.skill2.toLowerCase().includes(search.toLocaleLowerCase())
     || name.skill3.toLowerCase().includes(search.toLocaleLowerCase()) 
-     
+    || name.availability.toLowerCase().includes(search.toLocaleLowerCase())
+    || name.status.toLowerCase().includes(search.toLocaleLowerCase())  
     )
     
   });
@@ -100,8 +103,17 @@ useEffect(() => {
         </div>
       </nav>
 
- 
-      <h3 style={{ textAlign: "center"}}>Details of all the applicants</h3>
+    <div className="searchdiv">
+      <MDBCol md="6"> 
+      <MDBInput hint="Search" className="searchbar" type="text" containerClass="mt-0" onChange={(e) => {
+        setSearch(e.target.value);
+        console.log(e.target.value);
+      }}
+     />
+     </MDBCol>
+     </div>
+    
+     <h3 style={{ textAlign: "center"}}>Details of all the applicants</h3>
       <Tablee filterNames ={filterNames} />        
       </div>
 

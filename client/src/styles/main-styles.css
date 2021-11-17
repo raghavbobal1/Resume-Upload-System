@@ -48,3 +48,17 @@ select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
+
+.searchbar{
+ width: 15em !important;
+ position: sticky;
+ top: -50px;
+ background-color: transparent !important;
+}
+
+.searchdiv{
+  width: 10%  !important;
+  margin-left: 9em !important;
+  
+  
+}
